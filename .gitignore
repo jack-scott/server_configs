@@ -1,3 +1,9 @@
 jellyfin/config
 jellyfin/cache
 starr_apps/config
+home_assistant/config
+seaweed_fs/config
+
+# Backup directories
+*/backups/
+*.backup.*

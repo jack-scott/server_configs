@@ -1,0 +1,13 @@
+version: "3.2"
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:stable
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    environment:
+      - TZ=Australia/Sydney
+    volumes:
+      - ./config:/config
+      - /run/dbus:/run/dbus:ro
