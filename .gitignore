@@ -3,6 +3,9 @@ jellyfin/cache
 starr_apps/config
 home_assistant/config
 seaweed_fs/config
+management_stack/portainer/data
+# Environment files
+.env
 
 # Backup directories
 */backups/
