@@ -1,0 +1,12 @@
+secrets:
+  - name: PORTAINER_TOKEN
+    provider: file
+    key: ./secrets/portainer_token
+
+params:
+  - PORTAINER_URL: http://localhost:9000
+
+steps:
+  - shell: /bin/bash
+    command: 'curl -s "${PORTAINER_URL}/api/endpoints/3/docker/containers/json?all=true" -H "X-API-Key: ${PORTAINER_TOKEN}" | jq .'
+    stdout: /tmp/portainer_containers.json
