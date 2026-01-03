@@ -1,0 +1,9 @@
+services:
+  dashy:
+    image: lissy93/dashy:latest
+    container_name: dashy-dashboard
+    restart: always
+    ports:
+      - "${DASHY_PORT:-4000}:8080"
+    volumes:
+      - ${DASHY_CONFIG_PATH:-./config}/conf.yml:/app/user-data/conf.yml

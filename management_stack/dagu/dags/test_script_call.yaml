@@ -1,0 +1,7 @@
+# Named parameters
+params:
+  - SCRIPT_DIR: "/home/jack/Documents/projects/misc_snippets/file_monitor"
+  - ARGS: "/home/jack/Videos/"
+
+steps:
+  - command: "${SCRIPT_DIR}/file_monitor.py ${ARGS}"
