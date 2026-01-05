@@ -12,3 +12,6 @@ management_stack/dashy/config
 # Backup directories
 */backups/
 *.backup.*
+
+# Secrets
+*/secrets/
