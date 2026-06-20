@@ -4,6 +4,10 @@ services:
     container_name: jellyfin
     user: "1000:1000"
     network_mode: ${JELLYFIN_NETWORK_MODE:-host}
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "110" #Render group
     security_opt:
       - apparmor:unconfined
     volumes:
@@ -14,5 +18,5 @@ services:
       - type: bind
         source: ${JELLYFIN_MEDIA_PATH:-/mnt/starr_data/data/media}
         target: /media
-        read_only: true
+        read_only: false
     restart: unless-stopped
